@@ -1,5 +1,5 @@
-#include "monty.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * _itoa - converts an integer to string
  * @n: integer
@@ -11,7 +11,7 @@ char *_itoa(int n)
 	int length;
 	char *num;
 
-	length = sprintf(NULL, 0, "%d", n);
+	length = snprintf(NULL, 0, "%d", n);
 	num = malloc(sizeof(char) * (length + 1));
 	if (!num)
 	{
@@ -19,11 +19,11 @@ char *_itoa(int n)
 		exit(EXIT_FAILURE);
 	}
 
-	sprintf(num, "%d", n);
+	snprintf(num, "%d", n);
 
 	return (num);
 }
-
+#include "monty.h"
 /**
  * check_number - checks if an array of chars is a number
  * @lnum: line number
